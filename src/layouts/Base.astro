@@ -1,0 +1,62 @@
+---
+import '@fontsource-variable/manrope';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { identity } from '../data/profile';
+import { localUrl } from '../lib/urls';
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+const {
+  title = 'Jimmy Chen — AI Engineer, Startup Founder & Agent Systems Researcher',
+  description = identity.description,
+  noindex = false,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(localUrl('social-card.png'), Astro.site);
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: identity.name,
+  alternateName: identity.fullName,
+  url: new URL(localUrl(), Astro.site).href,
+  jobTitle: identity.role,
+  sameAs: [identity.github, 'https://simplify-net.com/leadership/'],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={localUrl('favicon.svg')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jimmy Chen" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta
+      property="og:image:alt"
+      content="Jimmy Chen. I build AI systems—and the products around them."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+  </head>
+  <body>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

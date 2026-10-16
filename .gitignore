@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.local/
+.superpowers/
+playwright-report/
+test-results/
+.env*
+Jimmy_Chen_Personal_Website_Coding_Agent_Prompt.md
+*.pdf

@@ -1,0 +1,51 @@
+---
+import { localUrl } from '../lib/urls';
+import { identity } from '../data/profile';
+import Arrow from './Arrow.astro';
+const links = ['Work', 'Research', 'About', 'Contact'];
+---
+
+<a class="skip-link" href="#main">
+  Skip to content
+</a>
+<header class="site-header wrap">
+  <a class="wordmark" href={localUrl()} aria-label="Jimmy Chen home">
+    <span class="brand-mark" aria-hidden="true">
+      jc<span>↗</span>
+    </span>
+    Jimmy Chen<span class="wordmark-dot">.</span>
+  </a>
+  <nav class="desktop-nav" aria-label="Main navigation">
+    {links.map((link) => (
+      <a href={localUrl(`#${link.toLowerCase()}`)}>{link}</a>
+    ))}
+    <a class="nav-github" href={identity.github}>
+      GitHub <Arrow diagonal />
+    </a>
+  </nav>
+  <details class="mobile-nav">
+    <summary>
+      Menu <span aria-hidden="true">+</span>
+    </summary>
+    <nav aria-label="Mobile navigation">
+      {links.map((link) => (
+        <a href={localUrl(`#${link.toLowerCase()}`)}>{link}</a>
+      ))}
+      <a href={identity.github}>GitHub ↗</a>
+    </nav>
+  </details>
+</header>
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>('.mobile-nav');
+  menu?.querySelectorAll('a').forEach((link) =>
+    link.addEventListener('click', () => {
+      menu.open = false;
+    }),
+  );
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu?.open) {
+      menu.open = false;
+      menu.querySelector('summary')?.focus();
+    }
+  });
+</script>

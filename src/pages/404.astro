@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { localUrl } from '../lib/urls';
+---
+
+<Base
+  title="Page not found — Jimmy Chen"
+  description="This page could not be found. Return to Jimmy Chen’s selected work in AI engineering, products, and agent systems research."
+  noindex
+>
+  <section class="not-found wrap">
+    <p class="eyebrow">404 / A missing connection</p>
+    <h1>
+      Page not found<span class="blue">.</span>
+    </h1>
+    <p>The address may have changed. There’s plenty to explore from here.</p>
+    <a class="button" href={localUrl()}>
+      Back to the homepage →
+    </a>
+  </section>
+</Base>

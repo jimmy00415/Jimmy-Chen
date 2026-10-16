@@ -1,0 +1,7 @@
+dist
+node_modules
+.astro
+.local
+.superpowers
+Jimmy_Chen_Personal_Website_Coding_Agent_Prompt.md
+package-lock.json

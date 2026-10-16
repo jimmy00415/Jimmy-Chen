@@ -1,0 +1,12 @@
+---
+import { identity } from '../data/profile';
+import { localUrl } from '../lib/urls';
+---
+
+<footer class="site-footer wrap">
+  <a href={localUrl()}>
+    Jimmy Chen <span>CHEN Yiwei</span>
+  </a>
+  <p>Built with intention. Grounded in evidence.</p>
+  <a href={identity.github}>GitHub ↗</a>
+</footer>

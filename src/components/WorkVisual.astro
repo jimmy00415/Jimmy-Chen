@@ -1,0 +1,110 @@
+---
+interface Props {
+  kind: string;
+}
+const { kind } = Astro.props;
+---
+
+<div class:list={['work-visual', `visual-${kind}`]} aria-hidden="true">
+  {kind === 'openclaw' && (
+    <>
+      <div class="visual-meta">AGENT RUNTIME / COMPATIBILITY</div>
+      <div class="protocol-line">
+        <span>Tool-using history</span>
+        <span>→</span>
+        <span>Text-only model</span>
+      </div>
+      <div class="protocol-box">
+        <span class="mono small">REPLAY ADAPTER</span>
+        <strong>
+          Keep the evidence.
+          <br />
+          Adapt the protocol.
+        </strong>
+        <div class="code-line">
+          <span>call_01</span> ↔ <span>result_01</span>
+        </div>
+      </div>
+      <div class="visual-bottom">
+        <span class="status-dot"></span> Stored transcript unchanged{' '}
+        <span>↗</span>
+      </div>
+    </>
+  )}
+  {kind === 'simplify' && (
+    <>
+      <div class="visual-meta">SIMPLIFY / PRODUCT ECOSYSTEM</div>
+      <div class="product-flow">
+        <div>
+          <span class="mono small">01 / BUILD</span>
+          <strong>MatchaCode</strong>
+          <span>AI coding CLI</span>
+        </div>
+        <span class="flow-arrow">↓</span>
+        <div>
+          <span class="mono small">02 / SHIP</span>
+          <strong>Flash Launch</strong>
+          <span>Publishing infrastructure</span>
+        </div>
+      </div>
+      <div class="visual-bottom">
+        From code to a live product <span>↗</span>
+      </div>
+    </>
+  )}
+  {kind === 'movie-intelligence' && (
+    <>
+      <div class="visual-meta">MOVIE INTELLIGENCE / RAG PIPELINE</div>
+      <div class="retrieval-flow">
+        <div>
+          <span>01</span>
+          <strong>Governed sources</strong>
+          <small>4.6K+ film records</small>
+        </div>
+        <div>
+          <span>02</span>
+          <strong>Semantic retrieval</strong>
+          <small>Validated artifacts</small>
+        </div>
+        <div>
+          <span>03</span>
+          <strong>Grounded answers</strong>
+          <small>Traceable citations</small>
+        </div>
+      </div>
+      <div class="visual-bottom">
+        Evidence from source to answer <span>↗</span>
+      </div>
+    </>
+  )}
+  {kind === 'personal-ai-memory' && (
+    <>
+      <div class="visual-meta">PERSONAL AI / RESEARCH DESIGN</div>
+      <div class="memory-episodes">
+        <span></span>
+        <span></span>
+        <span class="chosen"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="memory-selection">
+        <span class="mono small">RETRIEVE AN EPISODE</span>
+        <strong>
+          Find the moment.
+          <br />
+          Inspect the evidence.
+        </strong>
+        <div class="memory-modes">
+          <span>TEXT</span>
+          <span>VISUAL</span>
+          <span>HYBRID</span>
+        </div>
+      </div>
+      <div class="visual-bottom">
+        Comparative evaluation ongoing <span>↗</span>
+      </div>
+    </>
+  )}
+</div>

@@ -1,0 +1,12 @@
+---
+import CaseStudy from '../../layouts/CaseStudy.astro';
+import { cases } from '../../data/cases';
+export function getStaticPaths() {
+  return cases
+    .filter((study) => study.category === 'work')
+    .map((study) => ({ params: { slug: study.slug }, props: { study } }));
+}
+const { study } = Astro.props;
+---
+
+<CaseStudy study={study} />

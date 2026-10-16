@@ -1,0 +1,44 @@
+<figure class="protocol-demo">
+  <figcaption>
+    <span class="eyebrow">Illustration of the repair</span>
+    <p>
+      Two synthetic file reads from the PR’s documented example, shown as
+      simplified protocol before the repair and assistant text afterward. This
+      is an explanation, not a live model execution.
+    </p>
+  </figcaption>
+  <div class="protocol-comparison">
+    <details open>
+      <summary>Before · incompatible tool protocol</summary>
+      <pre><code>{`assistant.tool_calls:
+  id: callmw2u3tq3 / name: read
+  {"path":"notes.txt","optional":true}
+  id: calllu52e2fv / name: read
+  {"path":"readme.md","optional":true}
+
+tool / tool_call_id: callmw2u3tq3
+  NOTES_TOKEN=amber-17
+tool / tool_call_id: calllu52e2fv
+  README_TOKEN=violet-29`}</code></pre>
+      <p>A strict no-tools contract can reject historical tool fields.</p>
+    </details>
+    <details open>
+      <summary>After · evidence as assistant text</summary>
+      <pre><code>{`assistant.content:
+  [tool call id=callmw2u3tq3 name=read]
+  {"path":"notes.txt","optional":true}
+  [tool call id=calllu52e2fv name=read]
+  {"path":"readme.md","optional":true}
+  [tool result id=callmw2u3tq3 name=read]
+  NOTES_TOKEN=amber-17
+  [tool result id=calllu52e2fv name=read]
+  README_TOKEN=violet-29`}</code></pre>
+      <p>
+        The association survives. Stored conversation history stays unchanged.
+      </p>
+    </details>
+  </div>
+  <a class="text-link" href="https://github.com/openclaw/openclaw/pull/148106">
+    Inspect the merged implementation ↗
+  </a>
+</figure>

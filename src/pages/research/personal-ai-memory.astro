@@ -1,0 +1,7 @@
+---
+import CaseStudy from '../../layouts/CaseStudy.astro';
+import { cases } from '../../data/cases';
+const study = cases.find((study) => study.slug === 'personal-ai-memory')!;
+---
+
+<CaseStudy study={study} />
