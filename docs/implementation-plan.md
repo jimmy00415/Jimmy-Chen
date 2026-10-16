@@ -12,11 +12,11 @@
 
 ## Tasks
 
-- [ ] 1. Establish Astro, compatible locked dependencies, strict type checks, formatting/lint commands, and targeted static-output tests. Run tests before route implementation to establish failure.
-- [ ] 2. Build shared header/footer/SEO, base-aware URL helpers, homepage, four detail routes, semantic illustrations, 404, sitemap, robots, and optimized supplied portrait. Every case identifies role, status, contribution, evidence, and limitations.
-- [ ] 3. Reconcile independently checked sources into the public content and local-only source map. Include the original CV download only if suitable for public release; otherwise explain omission in handoff. Never publish private source material.
-- [ ] 4. Run formatting, lint, type checks, static tests and production build. Serve production output under the real base path; browser-test 320/375/768/1440 widths, every route/link/anchor, keyboard, reduced motion, no-JS navigation, missing assets and accessibility. Capture and open desktop/mobile/case screenshots. Run local Lighthouse if available.
-- [ ] 5. Get independent code/content review, fix material findings, repeat affected checks. Commit source to main; publish dist to gh-pages; enable GitHub Pages using that branch if necessary. Verify the real URL and deep routes before reporting deployment.
+- [x] 1. Establish Astro, compatible locked dependencies, strict type checks, formatting/lint commands, and targeted static-output tests. Run tests before route implementation to establish failure.
+- [x] 2. Build shared header/footer/SEO, base-aware URL helpers, homepage, four detail routes, semantic illustrations, 404, sitemap, robots, and optimized supplied portrait. Every case identifies role, status, contribution, evidence, and limitations.
+- [x] 3. Reconcile independently checked sources into the public content and local-only source map. Include the original CV download only if suitable for public release; otherwise explain omission in handoff. Never publish private source material.
+- [x] 4. Run formatting, lint, type checks, static tests and production build. Serve production output under the real base path; browser-test 320/375/768/1440 widths, every route/link/anchor, keyboard, reduced motion, no-JS navigation, missing assets and accessibility. Capture and open desktop/mobile/case screenshots. Run local Lighthouse if available.
+- [x] 5. Get independent code/content review, fix material findings, repeat affected checks. Commit source to main; publish dist to gh-pages; enable GitHub Pages using that branch if necessary. Verify the real URL and deep routes before reporting deployment.
 
 ## Review focus
 

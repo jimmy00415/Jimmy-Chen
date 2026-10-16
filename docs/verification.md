@@ -22,4 +22,10 @@ Public evidence was checked separately from implementation: OpenClaw live merge 
 
 The source CV was inspected and left unchanged. It is excluded from Git/build/public downloads because it contains phone/GPA details and planned HKUST dates that conflict with the brief’s public release rules. No fabricated replacement download was added. The complete original brief and internal source map also remain local.
 
-Deployment verification is recorded in the delivery message after the real Pages build and URL checks; this document does not infer deployment from a successful local build.
+## Hosted deployment
+
+Published to <https://jimmy00415.github.io/Jimmy-Chen/>. Source is on `main`; the compiled release is `gh-pages` commit `ee150c3a9f9cb3495b6aab1a6b6c3b2288403d48`. GitHub’s [Pages build and deployment](https://github.com/jimmy00415/Jimmy-Chen/actions/runs/38934130557) succeeded and the Pages API reports `built`.
+
+Direct hosted HTTP checks passed for the homepage, all four detail routes, both sitemap files, robots, favicon and PNG social image (HTTP 200). An unknown project path returned HTTP 404 with the custom “Page not found” content. No domain, repository visibility, paid infrastructure, or access permissions changed.
+
+After GitHub reported the deployment built, the complete browser suite was rerun with `SITE_URL=https://jimmy00415.github.io/Jimmy-Chen/`: all 20 route/viewport combinations, ten accessibility audits, and eleven interaction checks passed with zero failures. Final screenshots were captured from this hosted release and opened for review. No unresolved implementation or deployment blockers remain; the deliberate CV omission above is the only withheld downloadable asset.
