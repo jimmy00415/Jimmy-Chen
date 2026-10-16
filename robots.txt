@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /Jimmy-Chen/
+
+Sitemap: https://jimmy00415.github.io/Jimmy-Chen/sitemap-index.xml
