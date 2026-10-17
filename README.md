@@ -2,7 +2,7 @@
 
 Personal portfolio for **Jimmy Chen / CHEN Yiwei** — AI Engineer, Startup Founder, and Agent Systems Researcher.
 
-Static Astro + TypeScript. Typed public content, four substantive case studies, responsive source-backed illustrations, locally served Manrope, and an optimized owner-supplied portrait. No tracking or backend.
+Static Astro + TypeScript personal homepage. A name-led introduction, biography, authentic institution logos and official links, experience timeline, education, research and four substantive case studies. System fonts and an optimized owner-supplied portrait. No tracking or backend.
 
 ## Run and verify
 
@@ -31,11 +31,14 @@ The browser runner uses installed Chrome or Playwright Chromium (`npx playwright
 ## Content
 
 - `src/data/profile.ts`: identity, supporting projects, background, recognition.
+- `src/data/institutions.ts`: featured employer/school roles, official destinations and logo paths.
 - `src/data/cases.ts`: typed case studies, roles, status, evidence, and limits.
 - `src/layouts/CaseStudy.astro`: shared narrative layout and source references.
 - `src/components/WorkVisual.astro`: original explanatory illustrations, not product screenshots.
 - `src/components/ProtocolDemo.astro`: accessible synthetic illustration based on the OpenClaw PR’s two-read example.
 - `src/styles/global.css`: complete desktop/mobile visual system and focus/reduced-motion behavior.
+- `src/styles/personal.css`: personal homepage layout, biography, timeline, institution rows and responsive styles.
+- `public/logos/SOURCES.md`: provenance for authentic official institution assets.
 
 The original brief, CV, source-review notes, and test artifacts stay local and are ignored by Git. The original PDF is intentionally not downloadable: it includes phone/GPA details and planned education dates outside the brief’s public release rules. A future CV must be reviewed before being placed in `public/`. No replacement CV was generated.
 

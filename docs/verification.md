@@ -1,5 +1,7 @@
 # Release verification — 17 October 2026
 
+This records the initial portfolio release. The owner subsequently requested a personal homepage redesign; see [current redesign and verification](personal-homepage-redesign.md). Lighthouse/axe measurements below belong to the initial release, not the redesigned homepage.
+
 Local production build, served at `http://127.0.0.1:4321/Jimmy-Chen/`. Tests used installed Google Chrome headless on Windows, not a real mobile handset.
 
 ## Actual checks

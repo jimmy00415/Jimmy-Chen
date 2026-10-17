@@ -15,6 +15,32 @@ const routes = [
 ];
 const html = (route) => readFile(path.join(root, route, 'index.html'), 'utf8');
 
+test('homepage presents Jimmy as a person and links companies and schools', async () => {
+  const $ = load(await html(''));
+  assert.equal($('h1').text().replace(/\s+/g, ' ').trim(), 'Jimmy Chen');
+  assert.ok($('#about h2').text().includes('Biography'));
+  assert.ok($('#journey h2').text().includes('Experience'));
+  for (const name of [
+    'Simplify',
+    'Climind',
+    'Hong Kong Baptist University',
+    'Hong Kong University of Science and Technology',
+  ]) {
+    const entry = $('[data-institution]').filter(
+      (_, element) => $(element).attr('data-institution') === name,
+    );
+    assert.ok(entry.length, name);
+    assert.ok(
+      entry.find('a[href^="https://"]').length,
+      `Institution link missing: ${name}`,
+    );
+  }
+  assert.equal(
+    $('.hero-index, .evidence-strip, .work-list .work-visual').length,
+    0,
+  );
+});
+
 test('all substantive routes have semantic content and real canonical URLs', async () => {
   for (const route of routes) {
     const $ = load(await html(route));

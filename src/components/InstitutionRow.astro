@@ -1,0 +1,39 @@
+---
+import type { Institution } from '../data/institutions';
+import { localUrl } from '../lib/urls';
+interface Props {
+  institution: Institution;
+}
+const { institution } = Astro.props;
+---
+
+<article class="institution-row" data-institution={institution.name}>
+  <a
+    class="institution-logo"
+    href={institution.url}
+    aria-label={`${institution.name} official website`}
+  >
+    <img
+      src={localUrl(`logos/${institution.logo}`)}
+      alt={`${institution.name} logo`}
+      width="88"
+      height="68"
+      loading="lazy"
+    />
+  </a>
+  <div class="institution-copy">
+    <div class="institution-heading">
+      <h3>
+        <a href={institution.url}>{institution.name}</a>
+      </h3>
+      <span class="institution-period">{institution.period}</span>
+    </div>
+    <p class="institution-role">{institution.role}</p>
+    <p>{institution.description}</p>
+    {institution.evidence && (
+      <a class="institution-evidence" href={localUrl(institution.evidence.url)}>
+        {institution.evidence.label} →
+      </a>
+    )}
+  </div>
+</article>

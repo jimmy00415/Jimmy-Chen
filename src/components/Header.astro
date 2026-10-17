@@ -2,7 +2,7 @@
 import { localUrl } from '../lib/urls';
 import { identity } from '../data/profile';
 import Arrow from './Arrow.astro';
-const links = ['Work', 'Research', 'About', 'Contact'];
+const links = ['About', 'Journey', 'Research', 'Work', 'Contact'];
 ---
 
 <a class="skip-link" href="#main">
@@ -10,10 +10,7 @@ const links = ['Work', 'Research', 'About', 'Contact'];
 </a>
 <header class="site-header wrap">
   <a class="wordmark" href={localUrl()} aria-label="Jimmy Chen home">
-    <span class="brand-mark" aria-hidden="true">
-      jc<span>↗</span>
-    </span>
-    Jimmy Chen<span class="wordmark-dot">.</span>
+    JC<span class="wordmark-dot">.</span>
   </a>
   <nav class="desktop-nav" aria-label="Main navigation">
     {links.map((link) => (
